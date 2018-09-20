@@ -22,7 +22,7 @@ class LdapServiceProvider extends ServiceProvider {
 	{
 		$this->publishes([
             __DIR__ . '/config/ldap.php' => config_path('ldap.php'),
-        ]);
+        ], 'ldap');
 
 		Auth::provider('ldap', function ($app, array $config) {
 			return new LdapAuthUserProvider($app['hash'], $config['model']);
