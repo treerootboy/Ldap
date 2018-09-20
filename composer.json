@@ -18,5 +18,15 @@
         "psr-0": {
             "Xavrsl\\Ldap": "src/"
         }
+    },
+    "extra": {
+		"laravel": {
+			"providers": [
+				"Xavrsl\\Ldap\\LdapServiceProvider"
+			],
+			"aliases": {
+				"Ldap": "Xavrsl\\Ldap\\Facades\\Ldap"
+			}
+		}	    
     }
 }
