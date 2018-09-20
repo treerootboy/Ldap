@@ -36,9 +36,8 @@ class LdapServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['ldap'] = $this->app->share(function()
-		{
-            $config = $this->app['config']->get('ldap');
+		$this->app->singleton('ldap', function($app){
+            $config = $app['config']->get('ldap');
 			return new LdapManager($config);
 		});
 	}
